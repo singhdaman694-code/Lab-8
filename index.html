@@ -1,0 +1,66 @@
+
+<!DOCTYPE html>
+<html>
+<head>
+<title>Lab 8 - Task 1</title>
+
+<script type="text/javascript">
+
+var msg = "Zoo";
+
+function scrollMsgDemo()
+{
+    document.scrollDemo.textScroll.value = msg;
+
+    msg = msg.substring(1, msg.length) +
+          msg.substring(0, 1);
+
+    setTimeout("scrollMsgDemo()", 200);
+}
+
+function showTiger()
+{
+    document.getElementById("myImage").src = "tiger.jpg";
+}
+
+function showMyPhoto()
+{
+    document.getElementById("myImage").src = "yourphoto.jpeg";
+}
+
+</script>
+
+</head>
+
+<body onload="scrollMsgDemo()">
+
+<h1>Lab 8 - Task 1</h1>
+
+<h2>Scrolling Message</h2>
+
+<form name="scrollDemo">
+    <input type="text" name="textScroll" size="40">
+</form>
+
+<hr>
+
+<h2>Animated Objects - Images</h2>
+
+<img id="myImage"
+     src="tiger.jpg"
+     width="400"
+     height="250"
+     alt="Tiger or my photograph">
+
+<br><br>
+
+<input type="button"
+       value="Show Tiger"
+       onclick="showTiger()">
+
+<input type="button"
+       value="Show My Photo"
+       onclick="showMyPhoto()">
+
+</body>
+</html>
